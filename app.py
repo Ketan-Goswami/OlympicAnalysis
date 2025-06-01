@@ -31,6 +31,9 @@ if user_menu == 'Medal Tally':
     
     medal_tally = helper.fetch_medal_tally(df, selected_year, selected_country)
     
+    medal_tally = medal_tally.reset_index(drop=True)
+    medal_tally.index = medal_tally.index + 1
+    
     if selected_year == 'Overall' and selected_country == 'Overall':
         st.title('Overall Medal Tally')
     if selected_year == 'Overall' and selected_country != 'Overall':
